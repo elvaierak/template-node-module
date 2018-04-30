@@ -1,14 +1,28 @@
-const PM_YARN = 'yarn'
-const PM_NPM = 'npm'
+const constants = require('./constants')
 
-module.exports = {
+const [
+  [, PM_YARN],
+  [, PM_NPM],
+  [, TF_JEST],
+  [, TF_NONE],
+] = constants
+
+let configuration = {
   prompts: {
     packageManager: {
       type: 'list',
       message: 'Which package manager do you want to choose?',
       choices: [
         PM_YARN,
-        PM_NPM
+        PM_NPM,
+      ]
+    },
+    testingFramework: {
+      type: 'list',
+      message: 'Which testing framework do you want to choose?',
+      choices: [
+        TF_NONE,
+        TF_JEST,
       ]
     }
   },
@@ -25,3 +39,9 @@ module.exports = {
     }
   }
 }
+
+// Constants are infected here, for the convenience of
+// the writing templates
+constants.infect(configuration)
+
+module.exports = configuration

@@ -5,6 +5,9 @@
     "publish": "echo \"not implemented\""
   },
   "devDependencies": {
+      <% if (testingFramework === TF_JEST) { %>
+        "jest": "^22.4.3",
+      <% } %>
     "bili": "^1.6.0"
   },
   "bili": {
