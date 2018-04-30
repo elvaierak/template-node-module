@@ -1,2 +1,2 @@
 # template-node-module
-Template for node module.
+Template for node modules.
