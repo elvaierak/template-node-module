@@ -9,7 +9,7 @@ constants.infect = function(configuration) {
   constants.forEach(([name, value]) => {
     configuration.prompts[name] = {
       type: 'list',
-      message: 'Infection of the constant(Displayed in the first usage only)',
+      message: 'Infection of the constant (Just skip).',
       choices: [value],
       default: value,
       store: true,
